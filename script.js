@@ -10,7 +10,6 @@ const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 
 toggle.addEventListener('click', (e) => {
     const html = document.querySelector('html')
-
     if (html.classList.contains('dark')) {
         html.classList.remove('dark')
         e.target.innerHTML = 'Dark mode'
@@ -39,8 +38,9 @@ function setTime() {
     dateEl.innerHTML = `${days[day]}, ${months[month]} <span class="circle">${date}</span>`
 }
 
+// StackOverflow https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
 const scale = (num, in_min, in_max, out_min, out_max) => {
-    return (num - in_num) * (out_max - out_min) / (in_max - in_min) + out_min;
+    return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
 setTime()
